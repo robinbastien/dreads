@@ -6,6 +6,7 @@ import { createVuetify } from 'vuetify';
 import * as components from 'vuetify/components'; // TODO: import only used components
 import * as directives from 'vuetify/directives';
 import colors from 'vuetify/lib/util/colors.mjs';
+import { router } from './utilities/router.js';
 
 import '@fortawesome/fontawesome-free/css/all.css'
 
@@ -25,4 +26,4 @@ const vuetify = createVuetify({
   directives,
 });
 
-createApp(App).use(vuetify).mount('#app');
+createApp(App).use(vuetify).use(router).mount('#app');
