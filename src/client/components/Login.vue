@@ -1,6 +1,5 @@
 <template>
-  <v-layout wrap>
-    <v-flex sm12 md6 offset-md3>
+  <div class="d-flex justify-start mb-6">
       <v-card elevation="4" light tag="section" align-self="center">
         <v-card-title>
           <v-layout align-self="center" justify-space-between>
@@ -36,8 +35,7 @@
           </v-btn>
         </v-card-actions>
       </v-card>
-    </v-flex>
-  </v-layout>
+  </div>
 </template>
 
 <script>
