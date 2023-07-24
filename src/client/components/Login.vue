@@ -1,17 +1,26 @@
 <template>
-  <div class="d-flex justify-start mb-6">
+  <div class="d-flex justify-center align-center mb-6 mh-100vh">
       <v-card elevation="4" light tag="section" align-self="center">
         <v-card-title>
-          <v-layout align-self="center" justify-space-between>
+          <v-layout align-self="center" class="justify-center pt-2 pb-2">
             <h3 class="headline">Login to Threads</h3>
-            <v-flex align-self="center">
-              <v-img alt="Login to Threads" class="ml-3" contain height="48px" position="center right" src="https://www.mobygames.com/images/i/12/25/1435075.png"></v-img>
-            </v-flex>
           </v-layout>
         </v-card-title>
         <v-divider></v-divider>
         <v-card-text>
           <p>Sign in with your username and password:</p>
+          <v-tooltip location="top">
+            <template v-slot:activator="{ props }">
+              <v-alert type="info" dismissible v-bind="props" class="mt-3 mb-3" border="start"
+        variant="tonal"
+        closable
+        close-label="Close Alert"
+        icon="fa fa-exclamation-triangle">
+                <strong>Note</strong> - Your user and password are stored locally only.
+              </v-alert>
+            </template>
+            <p>There is only an unofficial API for Threads currently. As a result, you must use your username and password to log in directly.<br /> This is only stored locally and Dreads.app doesn't store this information on the server.</p>
+          </v-tooltip>
           <v-form>
             <v-text-field
                           outline

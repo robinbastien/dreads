@@ -28,3 +28,14 @@ export default {
   },
 };
 </script>
+
+<style>
+  body .v-application {
+    background: #222 url(../assets/images/bg.jpg) center center no-repeat;
+    background-size: cover;
+  }
+
+  .mh-100vh {
+    min-height: 100vh;
+  }
+</style>
