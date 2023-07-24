@@ -13,6 +13,7 @@
   "license": "MIT",
   "dependencies": {
     "express": "^4.17.1",
+    "pinia": "^2.1.4",
     "threads-api": "^1.4.7",
     "vue": "^3.3.4",
     "vue-router": "^4.2.4",

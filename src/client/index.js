@@ -1,4 +1,5 @@
 import { createApp } from 'vue';
+import { createPinia, defineStore } from 'pinia';
 import App from './components/App.vue';
 
 import 'vuetify/styles';
@@ -7,6 +8,7 @@ import * as components from 'vuetify/components'; // TODO: import only used comp
 import * as directives from 'vuetify/directives';
 import colors from 'vuetify/lib/util/colors.mjs';
 import { router } from './utilities/router.js';
+import { useUserStore } from './utilities/stores/user.js';
 
 import '@fortawesome/fontawesome-free/css/all.css'
 
@@ -26,4 +28,17 @@ const vuetify = createVuetify({
   directives,
 });
 
-createApp(App).use(vuetify).use(router).mount('#app');
+const pinia = createPinia();
+const Application = createApp(App);
+Application
+.use(vuetify)
+.use(router)
+.use(pinia)
+.mount('#app');
+
+router.beforeEach((to) => {
+  // This will work make sure the correct store is used for the current running app
+  const user = useUserStore(pinia);
+
+  if (to.meta.requiresAuth && !user.isLoggedIn) return '/login';
+});
